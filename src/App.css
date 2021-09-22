@@ -1,38 +1,99 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchbar{
+  display: flex;
+  flex-direction: row;
+}
+.searchbar .search-input{
+  width: 500px;
+  height: 50px;
+  font-size: 25px;
+  background-color: rgba(165, 165, 165, 0.247);
+}
+.searchbar button{
+  padding: 0 10px;
+}
+ul{
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: #525252;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Landing Page */
+#landing-page{
   display: flex;
   flex-direction: column;
+}
+
+#landing-page #header {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+}
+
+#landing-page #header .header-search button{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 50px;
+  width: 40px;
 }
+#landing-page #header .header-login .button{
+  font-weight: 700px;
+  font-size: 25px;
+  min-width: 100px;
+  height: 50px;
+  background-color: cyan;
+  border: none;
+}
+#landing-page #body{
+  display: flex;
+  flex-direction: row;
+  padding: 20px 20px;
+}
+#landing-page #body .col-left{
+  justify-content: flex-start;
+  flex-basis: 25%;
+  height: 100vh;
+  border: 1px solid red;
+}
+#landing-page #body .col-right{
+  flex-basis: 75%;
+  border: 1px solid green;
+}
+/* End Landing Page */
 
-.App-link {
-  color: #61dafb;
+/* Login Box */
+.login-items{
+  height: 100vh;
+  background-color: rgb(114, 114, 114);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.login-items .sign-up{
+  width: 20%;
+  height: 30%;
+}
+.login-items .sign-up-form{
+  width: 100%;
+  padding: 20px 10px;
+  border: 2px solid #525252;
+  border-radius: 30%;
+  background-color: cornsilk;
+  box-shadow: 0px 0px 18px  #525252;
+  transition: 0.3s ease box-shadow;
+}
+.sign-up-form:hover{
+  box-shadow: 0px 0px 200px  #525252;
+}
+/* End Login Box */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
