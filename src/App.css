@@ -21,7 +21,14 @@ a {
   text-decoration: none;
   color: #525252;
 }
-
+ .button{
+  font-weight: 700px;
+  font-size: 25px;
+  min-width: 100px;
+  height: 40px;
+  background-color: cyan;
+  border: none;
+}
 /* Landing Page */
 #landing-page{
   display: flex;
@@ -44,28 +51,136 @@ a {
   height: 50px;
   width: 40px;
 }
-#landing-page #header .header-login .button{
-  font-weight: 700px;
-  font-size: 25px;
-  min-width: 100px;
-  height: 50px;
-  background-color: cyan;
-  border: none;
-}
+
 #landing-page #body{
   display: flex;
   flex-direction: row;
+  height: 85vh;
   padding: 20px 20px;
+  /* border: 2px solid purple; */
 }
 #landing-page #body .col-left{
-  justify-content: flex-start;
-  flex-basis: 25%;
-  height: 100vh;
-  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-basis: 20%;
+  background-color: rgba(169, 169, 169, 0.301);
+}
+#landing-page #body .col-left .body-log-in{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.575);
+  padding: 20px 5px;
+  font-size: 1rem;
+  color: #525252;
+}
+#landing-page #body .col-left .body-log-in button{
+  font-size: 35px;
+  min-width: 300px;
+  height: 50px;
+  background-color: white;
+  color: cyan;
+  border: 1px solid black;
+}
+#landing-page #body .col-left .body-popular-items{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.575);
+  padding: 5px 10px;
+}
+#landing-page #body .col-left .body-popular-items h3 {
+  text-align: left;
+  color: rgb(89, 89, 90);
+}
+#landing-page #body .col-left .item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+#landing-page #body .col-left .item button{
+  background-color: black;
+  color: cyan;
+}
+#landing-page #body .col-left .extra-information-services{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  line-height: 3rem;
+}
+#landing-page #body .col-left .extra-information-services a {
+  padding-right: 10px;
 }
 #landing-page #body .col-right{
-  flex-basis: 75%;
+  flex-basis: 60%;
   border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+}
+
+#landing-page #body .col-right .categories-bar .categories{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  top: 0;
+  font-size: 1rem;
+  font-weight: bolder;
+  /* background-color: rgba(169, 169, 169, 0.301); */
+}
+#landing-page #body .col-right .categories-bar .categories a:hover{
+  color: red;
+}
+#landing-page #body .col-right .items-scroll{
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 90%;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+#landing-page #body .col-right .items-scroll .item{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 20px;
+  background-color: rgba(0, 255, 255, 0.205) ;
+  border-bottom: 1px solid black;
+  box-shadow: 10px 5px 5px rgb(241, 240, 124);
+}
+#landing-page #body .col-right .items-scroll .item .item-activity{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: .8rem;
+  padding-left: 10%;
+  align-items: center;
+  width: 30%;
+}
+#landing-page #body .col-right .items-scroll .item .item-activity img{
+  height: 30px;
+  padding: 0 2px;
+}
+#landing-page #body .col-right .items-scroll .item .item-picture button{
+  background-color: black;
+  color: cyan;
+  width: 200px;
+  height: 30px;
+}
+#landing-page #body .col-right .items-scroll .item .item-picture{
+  display: flex;
+  flex-direction: column;
+}
+#landing-page #body #body-far-right{
+  flex-basis: 20%;
+  border: 1px solid black;
+}
+#landing-page #footer .footer-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#landing-page #footer {
+   background-color: rgba(169, 169, 169, 0.301);
+
 }
 /* End Landing Page */
 
