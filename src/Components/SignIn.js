@@ -8,14 +8,16 @@ export default function SignIn(props) {
     let newUserName = e.target[0].value;
     let newPassword = e.target[1].value;
     let confirmPassword = e.target[2].value;
+    e.target.reset()
 
     if (newPassword !== confirmPassword) {
       console.log("retry password");
+      // make it send an error from the backend ///
     } else {
-      let newUser = {
+      let user = {
         name: newUserName,
-        password: newPassword,
-        account_balance: 0,
+        // password: newPassword,
+        // account_balance: 0,
       };
       let reqPack = {
         method: "POST",
@@ -23,10 +25,11 @@ export default function SignIn(props) {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify(newUser),
+        body: JSON.stringify(user),
       };
       fetch("http://localhost:3000/users", reqPack).then(res => res.json())
-        .then(data => console.log(data));
+        .then(data => console.log(data))
+        ;
     }
   };
 
