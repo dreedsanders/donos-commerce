@@ -5,10 +5,12 @@ import LandingPageHeader from "../Components/LandingPageHeader";
 
 export default function LandingPage() {
   return (
-    <div id="landing-page">
-      <LandingPageHeader />
-      <LandingPageBody />
-      <Footer />
+    <div className="App">
+      <div id="landing-page">
+        <LandingPageHeader />
+        <LandingPageBody />
+        <Footer />
+      </div>
     </div>
   );
 }

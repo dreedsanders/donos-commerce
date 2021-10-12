@@ -1,18 +1,10 @@
 import React from 'react'
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
-
 import "../App.css";
 
 export default function Login() {
-    const signUp = () => {
+    // const signUp = () => {
 
-    }
+    // }
     return (
       <div className="login-items">
         <div className="sign-up">

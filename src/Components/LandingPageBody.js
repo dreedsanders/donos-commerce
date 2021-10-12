@@ -23,6 +23,7 @@ export default function LandingPageBody() {
                 <img
                   src="https://img.icons8.com/ios/50/000000/sweater.png"
                   height="50px"
+                  alt="yes"
                 />
                 <div>
                   <h4>Item Name</h4>
@@ -35,6 +36,7 @@ export default function LandingPageBody() {
                 <img
                   src="https://img.icons8.com/ios/50/000000/sweater.png"
                   height="50px"
+                  alt="yes"
                 />
                 <div>
                   <h4>Item Name</h4>
@@ -47,6 +49,7 @@ export default function LandingPageBody() {
                 <img
                   src="https://img.icons8.com/ios/50/000000/sweater.png"
                   height="50px"
+                  alt="yes"
                 />
                 <div>
                   <h4>Item Name</h4>
@@ -101,7 +104,10 @@ export default function LandingPageBody() {
           <div className="items-scroll">
             <div className="item">
               <div className="item-user">
-                <img src="https://img.icons8.com/cute-clipart/64/000000/name.png" />
+                <img
+                  src="https://img.icons8.com/cute-clipart/64/000000/name.png"
+                  alt="yes"
+                />
                 <h3>User Name</h3>
               </div>
               <div className="item-description">
@@ -111,7 +117,10 @@ export default function LandingPageBody() {
                 </p>
                 <div className="item-picture">
                   <div>
-                    <img src="https://img.icons8.com/ios/50/000000/ingredients.png" />
+                    <img
+                      src="https://img.icons8.com/ios/50/000000/ingredients.png"
+                      alt="yes"
+                    />
                   </div>
                   <br></br>
                   <div>
@@ -121,11 +130,17 @@ export default function LandingPageBody() {
               </div>
               <div className="item-activity">
                 <div>
-                  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png" />
+                  <img
+                    src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png"
+                    alt="yes"
+                  />
                   <p>5 people have this in their cart</p>
                 </div>
                 <div>
-                  <img src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png" />
+                  <img
+                    src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png"
+                    alt="yes"
+                  />
                   <p>5 people have this on their wishlist</p>
                 </div>
               </div>
@@ -133,7 +148,10 @@ export default function LandingPageBody() {
             <br></br>
             <div className="item">
               <div className="item-user">
-                <img src="https://img.icons8.com/cute-clipart/64/000000/name.png" />
+                <img
+                  src="https://img.icons8.com/cute-clipart/64/000000/name.png"
+                  alt="yes"
+                />
                 <h3>User Name</h3>
               </div>
               <div className="item-description">
@@ -143,7 +161,10 @@ export default function LandingPageBody() {
                 </p>
                 <div className="item-picture">
                   <div>
-                    <img src="https://img.icons8.com/ios/50/000000/ingredients.png" />
+                    <img
+                      src="https://img.icons8.com/ios/50/000000/ingredients.png"
+                      alt="yes"
+                    />
                   </div>
                   <br></br>
                   <div>
@@ -153,11 +174,17 @@ export default function LandingPageBody() {
               </div>
               <div className="item-activity">
                 <div>
-                  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png" />
+                  <img
+                    src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png"
+                    alt="yes"
+                  />
                   <p>5 people have this in their cart</p>
                 </div>
                 <div>
-                  <img src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png" />
+                  <img
+                    src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png"
+                    alt="yes"
+                  />
                   <p>5 people have this on their wishlist</p>
                 </div>
               </div>
@@ -165,7 +192,10 @@ export default function LandingPageBody() {
             <br></br>
             <div className="item">
               <div className="item-user">
-                <img src="https://img.icons8.com/cute-clipart/64/000000/name.png" />
+                <img
+                  src="https://img.icons8.com/cute-clipart/64/000000/name.png"
+                  alt="yes"
+                />
                 <h3>User Name</h3>
               </div>
               <div className="item-description">
@@ -175,7 +205,10 @@ export default function LandingPageBody() {
                 </p>
                 <div className="item-picture">
                   <div>
-                    <img src="https://img.icons8.com/ios/50/000000/ingredients.png" />
+                    <img
+                      src="https://img.icons8.com/ios/50/000000/ingredients.png"
+                      alt="yes"
+                    />
                   </div>
                   <br></br>
                   <div>
@@ -185,11 +218,17 @@ export default function LandingPageBody() {
               </div>
               <div className="item-activity">
                 <div>
-                  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png" />
+                  <img
+                    src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png"
+                    alt="yes"
+                  />
                   <p>5 people have this in their cart</p>
                 </div>
                 <div>
-                  <img src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png" />
+                  <img
+                    src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png"
+                    alt="yes"
+                  />
                   <p>5 people have this on their wishlist</p>
                 </div>
               </div>
@@ -197,7 +236,10 @@ export default function LandingPageBody() {
             <br></br>
             <div className="item">
               <div className="item-user">
-                <img src="https://img.icons8.com/cute-clipart/64/000000/name.png" />
+                <img
+                  src="https://img.icons8.com/cute-clipart/64/000000/name.png"
+                  alt="yes"
+                />
                 <h3>User Name</h3>
               </div>
               <div className="item-description">
@@ -207,7 +249,10 @@ export default function LandingPageBody() {
                 </p>
                 <div className="item-picture">
                   <div>
-                    <img src="https://img.icons8.com/ios/50/000000/ingredients.png" />
+                    <img
+                      src="https://img.icons8.com/ios/50/000000/ingredients.png"
+                      alt="yes"
+                    />
                   </div>
                   <br></br>
                   <div>
@@ -217,11 +262,17 @@ export default function LandingPageBody() {
               </div>
               <div className="item-activity">
                 <div>
-                  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png" />
+                  <img
+                    src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png"
+                    alt="yes"
+                  />
                   <p>5 people have this in their cart</p>
                 </div>
                 <div>
-                  <img src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png" />
+                  <img
+                    src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png"
+                    alt="yes"
+                  />
                   <p>5 people have this on their wishlist</p>
                 </div>
               </div>
@@ -229,7 +280,10 @@ export default function LandingPageBody() {
             <br></br>
             <div className="item">
               <div className="item-user">
-                <img src="https://img.icons8.com/cute-clipart/64/000000/name.png" />
+                <img
+                  src="https://img.icons8.com/cute-clipart/64/000000/name.png"
+                  alt="yes"
+                />
                 <h3>User Name</h3>
               </div>
               <div className="item-description">
@@ -239,7 +293,10 @@ export default function LandingPageBody() {
                 </p>
                 <div className="item-picture">
                   <div>
-                    <img src="https://img.icons8.com/ios/50/000000/ingredients.png" />
+                    <img
+                      src="https://img.icons8.com/ios/50/000000/ingredients.png"
+                      alt="yes"
+                    />
                   </div>
                   <br></br>
                   <div>
@@ -249,11 +306,17 @@ export default function LandingPageBody() {
               </div>
               <div className="item-activity">
                 <div>
-                  <img src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png" />
+                  <img
+                    src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png"
+                    alt="yes"
+                  />
                   <p>5 people have this in their cart</p>
                 </div>
                 <div>
-                  <img src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png" />
+                  <img
+                    src="https://img.icons8.com/external-justicon-lineal-justicon/64/000000/external-like-notifications-justicon-lineal-justicon.png"
+                    alt="yes"
+                  />
                   <p>5 people have this on their wishlist</p>
                 </div>
               </div>

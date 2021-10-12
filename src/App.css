@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgba(224, 197, 160, 0.438);
 }
 .searchbar{
   display: flex;
@@ -33,6 +34,20 @@ a {
 #landing-page{
   display: flex;
   flex-direction: column;
+}
+
+.header-login .button {
+  font-weight: 700px;
+  font-size: 25px;
+  min-width: 100px;
+  height: 40px;
+  background-color: cyan;
+  border: none;
+}
+.header-login .button:hover{
+  background-color: black;
+  color: cyan;
+  cursor: pointer;
 }
 
 #landing-page #header {
@@ -80,6 +95,11 @@ a {
   color: cyan;
   border: 1px solid black;
 }
+#landing-page #body .col-left .body-log-in button:hover{
+  color: black;
+  background-color: cyan;
+  cursor: pointer;
+}
 #landing-page #body .col-left .body-popular-items{
   border-bottom: 1px solid rgba(0, 0, 0, 0.575);
   padding: 5px 10px;
@@ -98,6 +118,10 @@ a {
   background-color: black;
   color: cyan;
 }
+#landing-page #body .col-left .item button:hover{
+  background-color: white;
+  color: black;
+}
 #landing-page #body .col-left .extra-information-services{
   display: flex;
   flex-direction: row;
@@ -108,9 +132,12 @@ a {
 #landing-page #body .col-left .extra-information-services a {
   padding-right: 10px;
 }
+#landing-page #body .col-left .extra-information-services a:hover{
+  color: red;
+}
 #landing-page #body .col-right{
   flex-basis: 60%;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   display: flex;
   flex-direction: column;
 }
@@ -142,8 +169,11 @@ a {
   flex-direction: row;
   padding: 10px 20px;
   background-color: rgba(0, 255, 255, 0.205) ;
-  border-bottom: 1px solid black;
-  box-shadow: 10px 5px 5px rgb(241, 240, 124);
+  border-bottom: .5px solid black;
+  
+}
+#landing-page #body .col-right .items-scroll .item:hover{
+box-shadow: 10px 5px 5px rgb(241, 240, 124);
 }
 #landing-page #body .col-right .items-scroll .item .item-activity{
   display: flex;
@@ -164,6 +194,10 @@ a {
   width: 200px;
   height: 30px;
 }
+#landing-page #body .col-right .items-scroll .item .item-picture button:hover{
+  color: black;
+  background-color: white;
+}
 #landing-page #body .col-right .items-scroll .item .item-picture{
   display: flex;
   flex-direction: column;
@@ -181,6 +215,12 @@ a {
 #landing-page #footer {
    background-color: rgba(169, 169, 169, 0.301);
 
+}
+
+#landing-page #footer button:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
 }
 /* End Landing Page */
 
@@ -200,7 +240,7 @@ a {
 .login-items .sign-up-form{
   width: 100%;
   padding: 20px 10px;
-  border: 2px solid #525252;
+  border: 2px solid #ff0000;
   border-radius: 30%;
   background-color: cornsilk;
   box-shadow: 0px 0px 18px  #525252;
@@ -211,4 +251,67 @@ a {
 }
 /* End Login Box */
 
+/* Welcome */
+.welcome{
+  display: flex;
+  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
+}
+.welcome-link{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  padding-top: 20%;
+}
+.welcome-link #home-link{
+  color: white;
+}
+#welcome-img{
+  min-height: 100vh;
+  min-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
+/* End Welcome */
+
+/* Login */
+.container{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: white;
+  width: 500px;
+  max-width: 60%;
+}
+.container:hover{
+  box-shadow: 5px 5px  blueviolet;
+}
+
+
+.container .close-button{
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* .container .container-background #container-background-span{
+  content: "";
+  height: 100vh;
+  background-color: black;
+} */
+/* End Login */
