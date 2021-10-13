@@ -1,7 +1,22 @@
 import React from "react";
 import SignIn from "./SignIn";
+import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function LandingPageHeader(props) {
+
+  let history = useHistory();
+      let user = useSelector((state) => state.userState.current_user);
+
+
+  const goHome = () => {
+    history.push("/")
+  }
+
+  const handleCheck = () => {
+    console.log(user)
+  }
 
   return (
     <div>
@@ -12,6 +27,7 @@ export default function LandingPageHeader(props) {
           <img
             src="https://img.icons8.com/dusk/64/000000/e-commerce.png"
             alt="yes"
+            onClick={goHome}
           />
         </div>
         <div className="header-search">
@@ -34,11 +50,26 @@ export default function LandingPageHeader(props) {
           </form>
         </div>
         <div className="header-login">
-          <button className="button" onClick={props.handleClick}>
-            Log in
-          </button>
-          {props.isShowLogin ? (
-            <SignIn isShowLogin={props.isShowLogin} handleClick={props.handleClick} />
+          <button onClick={handleCheck}>check</button>
+          {props.success || user.name ? (
+            <div>
+            <button className="button" onClick={props.handleLogout}>
+              Log Out
+            </button>
+            <Link to="mypage" >My Page </Link>
+            </div>
+          ) : (
+            <button className="button" onClick={props.handleClick}>
+              Log in
+            </button>
+          )}
+          {props.logged ? (
+            <SignIn
+              handleClick={props.handleClick}
+              success={props.success}
+              setSuccess={props.setSuccess}
+              setLogged={props.setLogged}
+            />
           ) : (
             ""
           )}

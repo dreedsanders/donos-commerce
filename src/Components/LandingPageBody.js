@@ -1,7 +1,10 @@
 import React from "react";
 import SignIn from "./SignIn";
+import { useSelector } from "react-redux";
 
 export default function LandingPageBody(props) {
+      let user = useSelector((state) => state.userState.current_user);
+
   return (
     <div>
       {/* Body of Page has two sections */}
@@ -14,13 +17,21 @@ export default function LandingPageBody(props) {
               Log in to add items to wishlist, add items to cart, and to see
               reviews
             </p>
-            <button className="button" onClick={props.handleClick}>
-              Log in
-            </button>
-            {props.isShowLogin ? (
+            {props.success || user.name ? (
+              <button className="button" onClick={props.handleLogout}>
+                Log Out
+              </button>
+            ) : (
+              <button className="button" onClick={props.handleClick}>
+                Log in
+              </button>
+            )}
+            {props.logged ? (
               <SignIn
-                isShowLogin={props.isShowLogin}
                 handleClick={props.handleClick}
+                success={props.success}
+                setSuccess={props.setSuccess}
+                setLogged={props.setLogged}
               />
             ) : (
               ""
@@ -71,12 +82,7 @@ export default function LandingPageBody(props) {
             </ul>
           </div>
           <div className="extra-information-services">
-            <a href="a">Careers</a>
-            <a href="a">About</a>
             <a href="a">Contact</a>
-            <a href="a">Developers</a>
-            <a href="a">Privacy</a>
-            <a href="a">Community Guidelines</a>
           </div>
         </div>
         {/* Right Section of Body has a infinite scroll of 

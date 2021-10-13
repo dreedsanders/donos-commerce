@@ -36,6 +36,11 @@ a {
   flex-direction: column;
 }
 
+#landing-page #header .header-icon:hover {
+  cursor: grab;
+  box-shadow: 5px 5px 5px rgb(85, 15, 15);
+}
+
 .header-login .button {
   font-weight: 700px;
   font-size: 25px;

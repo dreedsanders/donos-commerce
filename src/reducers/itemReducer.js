@@ -6,7 +6,7 @@ const initialState = {
 
 const itemReducer = (state = initialState, action) => {
     switch (action.type) {
-        case "GET_ITEMS":
+        case "GETITEMS":
             return {
                 ...state,
                 items: [action.items]

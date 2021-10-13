@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch} from "react-redux";
 
 // code for the box that pops up letting users sign in from the main page
 
 export default function SignIn(props) {
+  let dispatch = useDispatch();
+
+
   const handleCreateAccount = (e) => {
     e.preventDefault();
     let newUserName = e.target[0].value;
@@ -51,9 +55,12 @@ export default function SignIn(props) {
     };
     fetch("http://localhost:3000/login", reqPackage)
       .then(res => res.json())
-      .then(data => console.log(data));
+      .then(data => dispatch({ type: "LOGGEDIN", current_user: data }))
+      .then(props.setSuccess(!props.success))
+      .then(props.setLogged(!props.logged));
   }
-  return props.isShowLogin ? (
+  // console.log(props.logged, props.success)
+  return (
     <div>
       <div className="container" id="container">
         <button className="close-button" onClick={props.handleClick}>
@@ -81,7 +88,5 @@ export default function SignIn(props) {
     </div>
       </div>
     </div>
-  ) : (
-    ""
   );
 }
