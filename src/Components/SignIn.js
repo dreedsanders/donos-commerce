@@ -16,8 +16,8 @@ export default function SignIn(props) {
     } else {
       let user = {
         name: newUserName,
-        // password: newPassword,
-        // account_balance: 0,
+        password: newPassword,
+        account_balance: 0,
       };
       let reqPack = {
         method: "POST",
@@ -39,6 +39,7 @@ export default function SignIn(props) {
       name: e.target[0].value,
       password: e.target[1].value,
     };
+    e.target.reset()
 
     let reqPackage = {
       method: "POST",

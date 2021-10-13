@@ -1,16 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import SignIn from "./SignIn";
 
-export default function LandingPageHeader() {
-     const [isShowLogin, setIsShowLogin] = useState(true);
-
-     const handleLoginClick = () => {
-       setIsShowLogin((isShowLogin) => !isShowLogin);
-     };
-
-  const handleClick = () => {
-    handleLoginClick()
-  }
+export default function LandingPageHeader(props) {
 
   return (
     <div>
@@ -43,11 +34,11 @@ export default function LandingPageHeader() {
           </form>
         </div>
         <div className="header-login">
-          <button className="button" onClick={handleClick}>
+          <button className="button" onClick={props.handleClick}>
             Log in
           </button>
-          {isShowLogin ? (
-            <SignIn isShowLogin={isShowLogin} handleClick={handleClick} />
+          {props.isShowLogin ? (
+            <SignIn isShowLogin={props.isShowLogin} handleClick={props.handleClick} />
           ) : (
             ""
           )}

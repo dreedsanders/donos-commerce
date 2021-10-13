@@ -1,6 +1,7 @@
 import React from "react";
+import SignIn from "./SignIn";
 
-export default function LandingPageBody() {
+export default function LandingPageBody(props) {
   return (
     <div>
       {/* Body of Page has two sections */}
@@ -13,7 +14,17 @@ export default function LandingPageBody() {
               Log in to add items to wishlist, add items to cart, and to see
               reviews
             </p>
-            <button>Log in</button>
+            <button className="button" onClick={props.handleClick}>
+              Log in
+            </button>
+            {props.isShowLogin ? (
+              <SignIn
+                isShowLogin={props.isShowLogin}
+                handleClick={props.handleClick}
+              />
+            ) : (
+              ""
+            )}
           </div>
           <div className="body-popular-items">
             <h3>Popular Items</h3>

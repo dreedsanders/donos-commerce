@@ -300,7 +300,7 @@ box-shadow: 10px 5px 5px rgb(241, 240, 124);
 }
 
 
-.container .close-button{
+.close-button{
   cursor: pointer;
   border: none;
   background: none;
