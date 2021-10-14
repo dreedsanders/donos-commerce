@@ -55,7 +55,7 @@ export default function SignIn(props) {
     };
     fetch("http://localhost:3000/login", reqPackage)
       .then(res => res.json())
-      .then(data => dispatch({ type: "LOGGEDIN", current_user: data }))
+      .then(data => dispatch({ type: "LOGGEDIN", current_user: data, loggedin: true }))
       .then(props.setSuccess(!props.success))
       .then(props.setLogged(!props.logged));
   }

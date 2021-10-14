@@ -1,5 +1,5 @@
 import React from "react";
-import SignIn from "./SignIn";
+import SignIn from "../Pages/SignIn";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -7,7 +7,8 @@ import { useSelector } from "react-redux";
 export default function LandingPageHeader(props) {
 
   let history = useHistory();
-      let user = useSelector((state) => state.userState.current_user);
+  let user = useSelector((state) => state.userState.current_user);
+  let signedin = useSelector((state) => state.userState.logged)
 
 
   const goHome = () => {
@@ -15,7 +16,7 @@ export default function LandingPageHeader(props) {
   }
 
   const handleCheck = () => {
-    console.log(user)
+    console.log(user, "sign in box?", props.logged, "signed in?", props.success, "state signed in?", signedin)
   }
 
   return (
@@ -51,7 +52,7 @@ export default function LandingPageHeader(props) {
         </div>
         <div className="header-login">
           <button onClick={handleCheck}>check</button>
-          {props.success || user.name ? (
+          {props.success ? (
             <div>
             <button className="button" onClick={props.handleLogout}>
               Log Out

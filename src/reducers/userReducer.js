@@ -1,6 +1,7 @@
 const initialState = {
     created: false,
-    current_user: {},
+    loggedin: false,
+    current_user: null,
     users: {},
     errors: ""
 }
@@ -17,6 +18,7 @@ const userReducer = (state = initialState, action) => {
             return {
                 ...state,
                 current_user: [action.current_user],
+                loggedin: true,
                 errors: [action.errors]
             }
         case "GETUSERS":
@@ -26,9 +28,10 @@ const userReducer = (state = initialState, action) => {
             };
         case "LOGGEDOUT":
             return {
-                ...state,
-                current_user: [action.current_user]
-            }
+              ...state,
+              current_user: [action.current_user],
+              logged: [action.logged],
+            };
         default:
             return state;
     }

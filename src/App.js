@@ -1,10 +1,11 @@
 import "./App.css";
 import LandingPage from "./Containers/LandingPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Welcome from "./Components/Welcome";
+import Welcome from "./Components/Pages/Welcome"
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux"
-import MyPage from "./Components/MyPage";
+import MyPage from "./Components/User/MyPage"
+import ItemPage from "./Components/Items/ItemPage"
 function App() {
 
   let dispatch = useDispatch();
@@ -50,6 +51,9 @@ function App() {
         </Route>
         <Route exact path="/mypage">
           <MyPage />
+        </Route>
+        <Route exact path="/itempage">
+          <ItemPage />
         </Route>
       </Switch>
     </Router>

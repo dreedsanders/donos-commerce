@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import Footer from "../Components/Footer";
-import LandingPageBody from "../Components/LandingPageBody";
-import LandingPageHeader from "../Components/LandingPageHeader";
+import Footer from "../Components/Pages/Footer";
+import LandingPageBody from "../Components/Pages/LandingPageBody"
+import LandingPageHeader from "../Components/Pages/LandingPageHeader";
 
 
 export default function LandingPage() {
@@ -21,7 +21,8 @@ export default function LandingPage() {
 
   const handleLogout = () => {
     setSuccess(false)
-    dispatch({ type: "LOGGEDOUT", current_user: {}})
+    setLogged(false)
+    dispatch({ type: "LOGGEDOUT", current_user: null, loggedin: false})
 
   }
 

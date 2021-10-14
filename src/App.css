@@ -75,6 +75,7 @@ a {
 #landing-page #body{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   height: 85vh;
   padding: 20px 20px;
   /* border: 2px solid purple; */
@@ -84,6 +85,7 @@ a {
   flex-direction: column;
   justify-content: space-around;
   flex-basis: 20%;
+  border-radius: 30px;
   background-color: rgba(169, 169, 169, 0.301);
 }
 #landing-page #body .col-left .body-log-in{
@@ -142,8 +144,10 @@ a {
 }
 #landing-page #body .col-right{
   flex-basis: 60%;
+  background-color: rgba(76, 76, 97, 0.123);
   /* border: 1px solid green; */
   display: flex;
+  border-radius: 30px;
   flex-direction: column;
 }
 
@@ -175,6 +179,8 @@ a {
   padding: 10px 20px;
   background-color: rgba(0, 255, 255, 0.205) ;
   border-bottom: .5px solid black;
+  justify-content: space-evenly;
+  align-content: space-around;
   
 }
 #landing-page #body .col-right .items-scroll .item:hover{
