@@ -3,7 +3,8 @@ const initialState = {
     loggedin: false,
     current_user: null,
     users: {},
-    errors: ""
+    errors: "",
+    mypage: false
 }
 
 const userReducer = (state = initialState, action) => {
@@ -30,8 +31,14 @@ const userReducer = (state = initialState, action) => {
             return {
               ...state,
               current_user: [action.current_user],
-              logged: [action.logged],
+                logged: [action.logged],
+              mypage: false
             };
+        case "MYPAGE":
+            return {
+                ...state,
+                mypage: [action.mypage]
+            }
         default:
             return state;
     }

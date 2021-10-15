@@ -1,15 +1,22 @@
 import React from "react";
 import SignIn from "../Pages/SignIn";
 import { useHistory } from "react-router";
-import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function LandingPageHeader(props) {
 
   let history = useHistory();
-  let user = useSelector((state) => state.userState.current_user);
-  let signedin = useSelector((state) => state.userState.logged)
+  let dispatch = useDispatch();
 
+  let user = useSelector((state) => state.userState.current_user);
+  let signedin = useSelector((state) => state.userState.logged);
+
+
+  const myStyle = {
+    height: "25px",
+    fontSize: "20px",
+    fontWeight: "0px"
+  }
 
   const goHome = () => {
     history.push("/")
@@ -17,6 +24,10 @@ export default function LandingPageHeader(props) {
 
   const handleCheck = () => {
     console.log(user, "sign in box?", props.logged, "signed in?", props.success, "state signed in?", signedin)
+  }
+
+  const handleMyPage = () => {
+    dispatch({ type: "MYPAGE", mypage: true})
   }
 
   return (
@@ -37,27 +48,34 @@ export default function LandingPageHeader(props) {
               type="search"
               className="search-input"
               name="search"
-              placeholder={"Search Marketplace"}
+              placeholder={"search then press enter"}
               autoComplete="off"
             />
-            <button type="submit">
+            {/* <button type="submit">
               <img
                 src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-search-ecommerce-kiranshastry-lineal-color-kiranshastry.png"
                 width="35px"
                 height="40px"
                 alt="yes"
               />
-            </button>
+            </button> */}
           </form>
         </div>
         <div className="header-login">
           <button onClick={handleCheck}>check</button>
           {props.success ? (
-            <div>
-            <button className="button" onClick={props.handleLogout}>
-              Log Out
-            </button>
-            <Link to="mypage" >My Page </Link>
+            <div className="viewmypage">
+              <button className="mypage-button" onClick={handleMyPage}>My Page</button>
+              {/* <Link to="mypage" className="mypage-button">
+                My Page{" "}
+              </Link> */}
+              <button
+                className="button"
+                style={myStyle}
+                onClick={props.handleLogout}
+              >
+                Log Out
+              </button>
             </div>
           ) : (
             <button className="button" onClick={props.handleClick}>

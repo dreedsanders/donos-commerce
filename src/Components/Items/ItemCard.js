@@ -16,12 +16,13 @@ export default function ItemCard(props) {
   return (
     <div className="item" onClick={handleItemClick}>
       <div className="item-description">
-        <p>Item Name.</p>
+        <p>{props.item.name}</p>
         <div className="item-picture">
           <div>
             <img
-              src="https://img.icons8.com/ios/50/000000/ingredients.png"
+              src={props.item.image}
               alt="yes"
+              height="100px"
             />
           </div>
           <br></br>

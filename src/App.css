@@ -1,28 +1,29 @@
 .App {
   text-align: center;
-  background-color: rgba(224, 197, 160, 0.438);
+  background-color: rgba(203, 230, 243, 0.438);
 }
-.searchbar{
+.searchbar {
   display: flex;
   flex-direction: row;
 }
-.searchbar .search-input{
+.searchbar .search-input {
   width: 500px;
   height: 50px;
   font-size: 25px;
+  border-radius: 5px;
   background-color: rgba(165, 165, 165, 0.247);
 }
-.searchbar button{
+.searchbar button {
   padding: 0 10px;
 }
-ul{
+ul {
   list-style: none;
 }
 a {
   text-decoration: none;
   color: #525252;
 }
- .button{
+.button {
   font-weight: 700px;
   font-size: 25px;
   min-width: 100px;
@@ -31,7 +32,7 @@ a {
   border: none;
 }
 /* Landing Page */
-#landing-page{
+#landing-page {
   display: flex;
   flex-direction: column;
 }
@@ -46,13 +47,19 @@ a {
   font-size: 25px;
   min-width: 100px;
   height: 40px;
-  background-color: cyan;
+  background-color: rgb(54, 95, 133);
+  color: white;
   border: none;
+  border-radius: 5px;
 }
-.header-login .button:hover{
-  background-color: black;
-  color: cyan;
+.header-login .button:hover {
+  background-color: white;
+  color: rgb(54, 95, 133);
   cursor: pointer;
+}
+.viewmypage{
+  display: flex;
+  flex-direction: column;
 }
 
 #landing-page #header {
@@ -63,16 +70,24 @@ a {
   padding: 10px 20px;
   border-bottom: 1px solid black;
 }
-
-#landing-page #header .header-search button{
+#landing-page #header  .header-login .mypage-button{
+  background-color: rgb(78, 141, 65);
+  color: white;
+}
+#landing-page #header  .header-login .mypage-button:hover{
+  background-color: white;
+  color:black;
+}
+#landing-page #header .header-search button {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
   width: 40px;
+  border-radius: 5px;
 }
 
-#landing-page #body{
+#landing-page #body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -80,7 +95,7 @@ a {
   padding: 20px 20px;
   /* border: 2px solid purple; */
 }
-#landing-page #body .col-left{
+#landing-page #body .col-left {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -88,26 +103,27 @@ a {
   border-radius: 30px;
   background-color: rgba(169, 169, 169, 0.301);
 }
-#landing-page #body .col-left .body-log-in{
+#landing-page #body .col-left .body-log-in {
   border-bottom: 1px solid rgba(0, 0, 0, 0.575);
   padding: 20px 5px;
   font-size: 1rem;
   color: #525252;
 }
-#landing-page #body .col-left .body-log-in button{
+#landing-page #body .col-left .body-log-in .button {
   font-size: 35px;
-  min-width: 300px;
+  min-width: 200px;
   height: 50px;
-  background-color: white;
-  color: cyan;
+  background-color: rgb(54, 95, 133);
+  color: white;
   border: 1px solid black;
+  border-radius: 15px;
 }
-#landing-page #body .col-left .body-log-in button:hover{
-  color: black;
-  background-color: cyan;
+#landing-page #body .col-left .body-log-in button:hover {
+  color: rgb(54, 95, 133);
+  background-color: white;
   cursor: pointer;
 }
-#landing-page #body .col-left .body-popular-items{
+#landing-page #body .col-left .body-popular-items {
   border-bottom: 1px solid rgba(0, 0, 0, 0.575);
   padding: 5px 10px;
 }
@@ -115,21 +131,22 @@ a {
   text-align: left;
   color: rgb(89, 89, 90);
 }
-#landing-page #body .col-left .item{
+#landing-page #body .col-left .item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-#landing-page #body .col-left .item button{
-  background-color: black;
-  color: cyan;
+#landing-page #body .col-left .item button {
+  background-color: rgb(241, 240, 124);
+  color: black;
+  border-radius: 15px;
 }
-#landing-page #body .col-left .item button:hover{
+#landing-page #body .col-left .item button:hover {
   background-color: white;
   color: black;
 }
-#landing-page #body .col-left .extra-information-services{
+#landing-page #body .col-left .extra-information-services {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -139,10 +156,10 @@ a {
 #landing-page #body .col-left .extra-information-services a {
   padding-right: 10px;
 }
-#landing-page #body .col-left .extra-information-services a:hover{
+#landing-page #body .col-left .extra-information-services a:hover {
   color: red;
 }
-#landing-page #body .col-right{
+#landing-page #body .col-right {
   flex-basis: 60%;
   background-color: rgba(76, 76, 97, 0.123);
   /* border: 1px solid green; */
@@ -151,7 +168,7 @@ a {
   flex-direction: column;
 }
 
-#landing-page #body .col-right .categories-bar .categories{
+#landing-page #body .col-right .categories-bar .categories {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -160,10 +177,10 @@ a {
   font-weight: bolder;
   /* background-color: rgba(169, 169, 169, 0.301); */
 }
-#landing-page #body .col-right .categories-bar .categories a:hover{
+#landing-page #body .col-right .categories-bar .categories a:hover {
   color: red;
 }
-#landing-page #body .col-right .items-scroll{
+#landing-page #body .col-right .items-scroll {
   display: flex;
   flex-direction: column;
   padding-left: 5%;
@@ -173,47 +190,49 @@ a {
   overflow-y: auto;
   overflow-x: auto;
 }
-#landing-page #body .col-right .items-scroll .item{
+#landing-page #body .col-right .items-scroll .item {
   display: flex;
   flex-direction: row;
   padding: 10px 20px;
-  background-color: rgba(0, 255, 255, 0.205) ;
-  border-bottom: .5px solid black;
+  background-color: rgba(54, 95, 133, 0.212);
+  border-bottom: 0.5px solid black;
   justify-content: space-evenly;
   align-content: space-around;
-  
+  border-radius: 15px;
 }
-#landing-page #body .col-right .items-scroll .item:hover{
-box-shadow: 10px 5px 5px rgb(241, 240, 124);
+#landing-page #body .col-right .items-scroll .item:hover {
+  box-shadow: 10px 5px 5px rgb(241, 240, 124);
+  cursor: grabbing;
 }
-#landing-page #body .col-right .items-scroll .item .item-activity{
+#landing-page #body .col-right .items-scroll .item .item-activity {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: .8rem;
+  font-size: 0.8rem;
   padding-left: 10%;
   align-items: center;
   width: 30%;
 }
-#landing-page #body .col-right .items-scroll .item .item-activity img{
+#landing-page #body .col-right .items-scroll .item .item-activity img {
   height: 30px;
   padding: 0 2px;
 }
-#landing-page #body .col-right .items-scroll .item .item-picture button{
-  background-color: black;
-  color: cyan;
+#landing-page #body .col-right .items-scroll .item .item-picture button {
+  background-color: rgb(54, 95, 133);
+  color: white;
   width: 200px;
   height: 30px;
+  border-radius: 8px;
 }
-#landing-page #body .col-right .items-scroll .item .item-picture button:hover{
+#landing-page #body .col-right .items-scroll .item .item-picture button:hover {
   color: black;
-  background-color: white;
+  background-color: rgb(241, 240, 124);
 }
-#landing-page #body .col-right .items-scroll .item .item-picture{
+#landing-page #body .col-right .items-scroll .item .item-picture {
   display: flex;
   flex-direction: column;
 }
-#landing-page #body #body-far-right{
+#landing-page #body #body-far-right {
   flex-basis: 20%;
   border: 1px solid black;
 }
@@ -224,19 +243,18 @@ box-shadow: 10px 5px 5px rgb(241, 240, 124);
   align-items: center;
 }
 #landing-page #footer {
-   background-color: rgba(169, 169, 169, 0.301);
-
+  background-color: rgba(169, 169, 169, 0.301);
 }
 
-#landing-page #footer button:hover{
-    cursor: pointer;
-    background-color: white;
-    color: black;
+#landing-page #footer button:hover {
+  cursor: pointer;
+  background-color: white;
+  color: black;
 }
 /* End Landing Page */
 
 /* Login Box */
-.login-items{
+.login-items {
   height: 100vh;
   background-color: rgb(114, 114, 114);
   display: flex;
@@ -244,32 +262,32 @@ box-shadow: 10px 5px 5px rgb(241, 240, 124);
   justify-content: center;
   align-items: center;
 }
-.login-items .sign-up{
+.login-items .sign-up {
   width: 20%;
   height: 30%;
 }
-.login-items .sign-up-form{
+.login-items .sign-up-form {
   width: 100%;
   padding: 20px 10px;
   border: 2px solid #ff0000;
   border-radius: 30%;
   background-color: cornsilk;
-  box-shadow: 0px 0px 18px  #525252;
+  box-shadow: 0px 0px 18px #525252;
   transition: 0.3s ease box-shadow;
 }
-.sign-up-form:hover{
-  box-shadow: 0px 0px 200px  #525252;
+.sign-up-form:hover {
+  box-shadow: 0px 0px 200px #525252;
 }
 /* End Login Box */
 
 /* Welcome */
-.welcome{
+.welcome {
   display: flex;
   justify-content: flex-start;
   justify-content: center;
   align-items: center;
 }
-.welcome-link{
+.welcome-link {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -277,10 +295,10 @@ box-shadow: 10px 5px 5px rgb(241, 240, 124);
   color: white;
   padding-top: 20%;
 }
-.welcome-link #home-link{
+.welcome-link #home-link {
   color: white;
 }
-#welcome-img{
+#welcome-img {
   min-height: 100vh;
   min-width: 100vw;
   position: fixed;
@@ -292,7 +310,7 @@ box-shadow: 10px 5px 5px rgb(241, 240, 124);
 /* End Welcome */
 
 /* Login */
-.container{
+.container {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -306,12 +324,11 @@ box-shadow: 10px 5px 5px rgb(241, 240, 124);
   width: 500px;
   max-width: 60%;
 }
-.container:hover{
-  box-shadow: 5px 5px  blueviolet;
+.container:hover {
+  box-shadow: 5px 5px blueviolet;
 }
 
-
-.close-button{
+.container .close-button {
   cursor: pointer;
   border: none;
   background: none;
@@ -326,3 +343,55 @@ box-shadow: 10px 5px 5px rgb(241, 240, 124);
   background-color: black;
 } */
 /* End Login */
+
+.mypage{
+   position: fixed;
+   display: flex;
+   flex-direction: row;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  border: 1px solid black;
+  border-radius: 15px;
+  z-index: 10;
+  background-color: white;
+  width: 90vw;
+  max-width: 90%;
+  height: 800px;
+  max-height: 80%;
+  overflow-y: scroll;
+
+}
+
+.mypage .mypage-items {
+display: flex;
+position: fixed;
+  flex-direction: column;
+  padding-left: 5%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 30%;
+}
+
+.mypage .mypage-left{
+  flex-basis: 20%;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+}
+.mypage .mypage-left #mypage-icon{
+  height: 100px;
+  width: 100px;
+}
+.mypage .mypage-left .mypage-dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.mypage .mypage-right{
+  flex-basis: 80%;
+  border: 1px solid blue;
+}

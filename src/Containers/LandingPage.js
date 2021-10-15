@@ -1,33 +1,31 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Footer from "../Components/Pages/Footer";
-import LandingPageBody from "../Components/Pages/LandingPageBody"
+import LandingPageBody from "../Components/Pages/LandingPageBody";
 import LandingPageHeader from "../Components/Pages/LandingPageHeader";
-
+import MyPage from "../Components/User/MyPage";
 
 export default function LandingPage() {
-
   let dispatch = useDispatch();
 
-  const [logged, setLogged] = useState(false)
-  // if logged true it shows the sign in box 
 
-  const [success, setSuccess] = useState(false)
+  const [logged, setLogged] = useState(false);
+  // if logged true it shows the sign in box
+
+  const [success, setSuccess] = useState(false);
   // if success true it means user successfuly logged in
 
   const handleClick = () => {
-    setLogged(!logged)
-  }
+    setLogged(!logged);
+  };
 
   const handleLogout = () => {
-    setSuccess(false)
-    setLogged(false)
-    dispatch({ type: "LOGGEDOUT", current_user: null, loggedin: false})
+    setSuccess(false);
+    setLogged(false);
+    dispatch({ type: "LOGGEDOUT", current_user: null, loggedin: false });
+  };
 
-  }
 
-  console.log(logged, success)
-  
   return (
     <div className="App">
       <div id="landing-page">
@@ -37,7 +35,7 @@ export default function LandingPage() {
           setLogged={setLogged}
           success={success}
           handleLogout={handleLogout}
-        />
+          />
         <LandingPageBody
           handleClick={handleClick}
           logged={logged}

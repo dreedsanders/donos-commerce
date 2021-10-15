@@ -1,17 +1,20 @@
 import React from "react";
-import SignIn from "../Pages/SignIn"
+import SignIn from "../Pages/SignIn";
 import { useSelector } from "react-redux";
-import ItemCard from "../Items/ItemCard"
+import ItemCard from "../Items/ItemCard";
 import PopularItemCard from "../Items/PopularItemCard";
+import MyPage from "../User/MyPage";
 
 export default function LandingPageBody(props) {
   // let user = useSelector((state) => state.userState.current_user);
-  let items = useSelector((state) => state.itemState.items[0])
-  let popular = []
-  for (let i = 0; i < 5; i++){
-    popular.push(items[i])
+  let items = useSelector((state) => state.itemState.items[0]);
+  let mypage = useSelector((state) => state.userState.mypage);
+
+  let popular = [];
+  for (let i = 0; i < 5; i++) {
+    popular.push(items[i]);
   }
-  popular.forEach(pop => console.log(pop.name))
+  // popular.forEach(pop => console.log(pop.name))
 
   return (
     <div>
@@ -25,7 +28,7 @@ export default function LandingPageBody(props) {
               Log in to add items to wishlist, add items to cart, and to see
               reviews
             </p>
-            { props.success ? (
+            {props.success ? (
               <button className="button" onClick={props.handleLogout}>
                 Log Out
               </button>
@@ -48,7 +51,9 @@ export default function LandingPageBody(props) {
           <div className="body-popular-items">
             <h3>Popular Items</h3>
             <ul className="popular-items">
-              {popular.forEach((pop) => <li><PopularItemCard item={pop} key={pop.id} /></li>)}
+              {popular.map((pop) =>
+                pop.id < 5 ? <PopularItemCard item={pop} /> : null
+              )}
 
               {/* INSERT POPULAR ITEM CARD LIST */}
             </ul>
@@ -91,7 +96,10 @@ export default function LandingPageBody(props) {
             </ul>
           </div>
           <div className="items-scroll">
-            {items ? (items.map((item) => <ItemCard item={item} key={item.id} />)) : null}
+            {mypage ? <MyPage /> : null}
+            {items
+              ? items.map((item) => <ItemCard item={item} key={item.id} />)
+              : null}
           </div>
         </div>
       </section>
