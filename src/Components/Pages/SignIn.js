@@ -1,18 +1,17 @@
 import React from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 
 // code for the box that pops up letting users sign in from the main page
 
 export default function SignIn(props) {
   let dispatch = useDispatch();
 
-
   const handleCreateAccount = (e) => {
     e.preventDefault();
     let newUserName = e.target[0].value;
     let newPassword = e.target[1].value;
     let confirmPassword = e.target[2].value;
-    e.target.reset()
+    e.target.reset();
 
     if (newPassword !== confirmPassword) {
       console.log("retry password");
@@ -31,19 +30,20 @@ export default function SignIn(props) {
         },
         body: JSON.stringify(user),
       };
-      fetch("http://localhost:3000/users", reqPack).then(res => res.json())
-        .then(data => console.log(data))
-        ;
+      fetch("http://localhost:3000/users", reqPack)
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .then(dispatch({ type: "CLOSESIGNIN", signin: false }));
     }
   };
 
   const handleLogin = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     let user = {
       name: e.target[0].value,
       password: e.target[1].value,
     };
-    e.target.reset()
+    e.target.reset();
 
     let reqPackage = {
       method: "POST",
@@ -54,16 +54,19 @@ export default function SignIn(props) {
       body: JSON.stringify(user),
     };
     fetch("http://localhost:3000/login", reqPackage)
-      .then(res => res.json())
-      .then(data => dispatch({ type: "LOGGEDIN", current_user: data, loggedin: true }))
-      .then(props.setSuccess(!props.success))
-      .then(props.setLogged(!props.logged));
-  }
+      .then((res) => res.json())
+      .then((data) =>
+        dispatch({ type: "LOGGEDIN", current_user: data, loggedin: true })
+      )
+      .then(dispatch({ type: "CLOSESIGNIN", signin: false }));
+    // .then(props.setSuccess(!props.success))
+    // .then(props.setLogged(!props.logged));
+  };
   // console.log(props.logged, props.success)
   return (
     <div>
       <div className="container" id="container">
-        <button className="close-button" onClick={props.handleClick}>
+        <button className="close-button" onClick={props.handleCloseSignIn}>
           &times;
         </button>
         <div className="form-container sign-up-container">
@@ -83,9 +86,9 @@ export default function SignIn(props) {
             <input type="submit" />
           </form>
         </div>
-    <div className="container-background">
-      <span id="container-background-span"></span>
-    </div>
+        <div className="container-background">
+          <span id="container-background-span"></span>
+        </div>
       </div>
     </div>
   );

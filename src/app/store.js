@@ -1,18 +1,27 @@
-import { createStore } from "redux";
+import { createStore, combineReducers, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import { combineReducers, applyMiddleware } from "redux";
+import { persistStore, persistReducer } from 'redux-persist' // imports from redux-persist
+import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
 import userReducer from "../reducers/userReducer";
 import itemReducer from "../reducers/itemReducer";
 
+const persistConfig = {
+  // configuration object for redux-persist
+  key: "root",
+  storage, // define which storage to use
+};
 
 const rootReducer = combineReducers({
-    userState: userReducer,
-    itemState: itemReducer
+  userState: userReducer,
+  itemState: itemReducer
 })
+const persistedReducer = persistReducer(persistConfig, rootReducer) // create a persisted reducer
 
 const store = createStore(
-  rootReducer,
+  persistedReducer,
   window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(applyMiddleware(thunk))
 );
 
-export default store 
+const persistor = persistStore(store);
+
+export {store, persistor}

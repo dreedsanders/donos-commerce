@@ -1,20 +1,32 @@
 import React from "react";
-import SignIn from "../Pages/SignIn";
-import { useSelector } from "react-redux";
+import SignIn from "./SignIn";
+import { useSelector, useDispatch } from "react-redux";
 import ItemCard from "../Items/ItemCard";
 import PopularItemCard from "../Items/PopularItemCard";
 import MyPage from "../User/MyPage";
 
 export default function LandingPageBody(props) {
-  // let user = useSelector((state) => state.userState.current_user);
+  let user = useSelector((state) => state.userState.current_user);
   let items = useSelector((state) => state.itemState.items[0]);
   let mypage = useSelector((state) => state.userState.mypage);
+  let dispatch = useDispatch();
+  let signin = useSelector((state) => state.userState.signin);
+
+  let handleMyPage = () => {
+    dispatch({ type: "CLOSEPAGE", mypage: false });
+  };
+
+  let categories = [];
+  items.map((item) => categories.push(item.category));
+  let topcategories = [...new Set(categories)]
+  console.log(topcategories)
 
   let popular = [];
-  for (let i = 0; i < 5; i++) {
-    popular.push(items[i]);
+  if (items) {
+    for (let i = 0; i < 5; i++) {
+      popular.push(items[i]);
+    }
   }
-  // popular.forEach(pop => console.log(pop.name))
 
   return (
     <div>
@@ -28,22 +40,17 @@ export default function LandingPageBody(props) {
               Log in to add items to wishlist, add items to cart, and to see
               reviews
             </p>
-            {props.success ? (
+            {user[0] ? (
               <button className="button" onClick={props.handleLogout}>
                 Log Out
               </button>
             ) : (
-              <button className="button" onClick={props.handleClick}>
+              <button className="button" onClick={props.handleShowSignIn}>
                 Log in
               </button>
             )}
-            {props.logged ? (
-              <SignIn
-                handleClick={props.handleClick}
-                success={props.success}
-                setSuccess={props.setSuccess}
-                setLogged={props.setLogged}
-              />
+            {signin ? (
+              <SignIn handleCloseSignIn={props.handleCloseSignIn} />
             ) : (
               ""
             )}
@@ -51,10 +58,13 @@ export default function LandingPageBody(props) {
           <div className="body-popular-items">
             <h3>Popular Items</h3>
             <ul className="popular-items">
-              {popular.map((pop) =>
-                pop.id < 5 ? <PopularItemCard item={pop} /> : null
-              )}
-
+              {popular
+                ? popular.map((pop) =>
+                    pop.id < 5 ? (
+                      <PopularItemCard item={pop} key={pop.id} />
+                    ) : null
+                  )
+                : null}
               {/* INSERT POPULAR ITEM CARD LIST */}
             </ul>
           </div>
@@ -69,9 +79,12 @@ export default function LandingPageBody(props) {
         <div className="col-right">
           <div className="categories-bar">
             <ul className="categories">
-              <li>
-                <a href="a">Home</a>
-              </li>
+              {/* {topcategories.forEach((category) => (
+                <li>
+                  <a href="a">Home</a>
+                </li>
+              ))} */}
+
               <li>
                 <a href="a">Electronics</a>
               </li>
@@ -96,7 +109,7 @@ export default function LandingPageBody(props) {
             </ul>
           </div>
           <div className="items-scroll">
-            {mypage ? <MyPage /> : null}
+            {mypage ? <MyPage handleMyPage={handleMyPage} /> : null}
             {items
               ? items.map((item) => <ItemCard item={item} key={item.id} />)
               : null}

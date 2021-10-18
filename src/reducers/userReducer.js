@@ -4,7 +4,8 @@ const initialState = {
     current_user: null,
     users: {},
     errors: "",
-    mypage: false
+    mypage: false,
+    signin: false
 }
 
 const userReducer = (state = initialState, action) => {
@@ -38,6 +39,21 @@ const userReducer = (state = initialState, action) => {
             return {
                 ...state,
                 mypage: [action.mypage]
+            }
+        case "CLOSEPAGE":
+            return {
+                ...state,
+                mypage: action.mypage
+            }
+        case "SHOWSIGNIN":
+            return {
+                ...state,
+                signin: action.signin
+            }
+        case "CLOSESIGNIN":
+            return {
+                ...state,
+                signin: action.signin
             }
         default:
             return state;

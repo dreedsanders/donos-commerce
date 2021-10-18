@@ -1,47 +1,42 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import Footer from "../Components/Pages/Footer";
 import LandingPageBody from "../Components/Pages/LandingPageBody";
 import LandingPageHeader from "../Components/Pages/LandingPageHeader";
-import MyPage from "../Components/User/MyPage";
 
 export default function LandingPage() {
   let dispatch = useDispatch();
 
-
-  const [logged, setLogged] = useState(false);
-  // if logged true it shows the sign in box
-
-  const [success, setSuccess] = useState(false);
-  // if success true it means user successfuly logged in
-
-  const handleClick = () => {
-    setLogged(!logged);
+  const handleShowSignIn = () => {
+    dispatch({ type: "SHOWSIGNIN", signin: true })
   };
 
+  const handleCloseSignIn = () => {
+    dispatch({ type: "CLOSESIGNIN", signin: false })
+  }
+
   const handleLogout = () => {
-    setSuccess(false);
-    setLogged(false);
     dispatch({ type: "LOGGEDOUT", current_user: null, loggedin: false });
+  };
+
+  const handleCloseDiv = (e) => {
+    if (e.target.id === "body" || e.target.id === "header") {
+      dispatch({ type: "CLOSEPAGE", mypage: false });
+    }
   };
 
 
   return (
-    <div className="App">
+    <div className="App" onClick={handleCloseDiv}>
       <div id="landing-page">
         <LandingPageHeader
-          handleClick={handleClick}
-          logged={logged}
-          setLogged={setLogged}
-          success={success}
+          handleShowSignIn={handleShowSignIn}
+          handleCloseSignIn={handleCloseSignIn}
           handleLogout={handleLogout}
-          />
+        />
         <LandingPageBody
-          handleClick={handleClick}
-          logged={logged}
-          setLogged={setLogged}
-          success={success}
-          setSuccess={setSuccess}
+          handleShowSignIn={handleShowSignIn}
+          handleCloseSignIn={handleCloseSignIn}
           handleLogout={handleLogout}
         />
         <Footer />

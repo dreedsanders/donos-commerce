@@ -1,5 +1,5 @@
 import React from "react";
-import SignIn from "../Pages/SignIn";
+import SignIn from "./SignIn";
 import { useHistory } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -9,7 +9,7 @@ export default function LandingPageHeader(props) {
   let dispatch = useDispatch();
 
   let user = useSelector((state) => state.userState.current_user);
-  let signedin = useSelector((state) => state.userState.logged);
+  let signin = useSelector((state) => state.userState.signin);
 
 
   const myStyle = {
@@ -20,10 +20,6 @@ export default function LandingPageHeader(props) {
 
   const goHome = () => {
     history.push("/")
-  }
-
-  const handleCheck = () => {
-    console.log(user, "sign in box?", props.logged, "signed in?", props.success, "state signed in?", signedin)
   }
 
   const handleMyPage = () => {
@@ -62,13 +58,9 @@ export default function LandingPageHeader(props) {
           </form>
         </div>
         <div className="header-login">
-          <button onClick={handleCheck}>check</button>
-          {props.success ? (
+          {user[0]? (
             <div className="viewmypage">
               <button className="mypage-button" onClick={handleMyPage}>My Page</button>
-              {/* <Link to="mypage" className="mypage-button">
-                My Page{" "}
-              </Link> */}
               <button
                 className="button"
                 style={myStyle}
@@ -78,11 +70,11 @@ export default function LandingPageHeader(props) {
               </button>
             </div>
           ) : (
-            <button className="button" onClick={props.handleClick}>
+            <button className="button" onClick={props.handleShowSignIn}>
               Log in
             </button>
           )}
-          {props.logged ? (
+          {signin ? (
             <SignIn
               handleClick={props.handleClick}
               success={props.success}
