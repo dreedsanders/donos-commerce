@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 
 export default function ItemPage() {
     let item = useSelector((state) => state.itemState.current_item[0])
-    console.log(item)
     return (
       <div className="itempage">
         <div className="itempage-left">

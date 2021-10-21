@@ -17,23 +17,51 @@ export default function LandingPageBody(props) {
   };
 
   let categories = [];
-  items.map((item) => categories.push(item.category));
-  let topcategories = [...new Set(categories)]
-  console.log(topcategories)
+  let counted = {};
+  let countedCat = [];
 
+  items.forEach((item) => categories.push(item.category));
+
+  categories.forEach((cate) => {
+    let count = 0;
+    for (let i = 0; i < categories.length; i++) {
+      if (cate === categories[i]) {
+        count = count + 1;
+      }
+    }
+    countedCat.push({ name: cate, amount: count });
+    if (Object.keys(counted).includes(cate)) {
+    } else {
+      counted[cate] = cate;
+    }
+  });
+  for (let i = 0; i < countedCat.length; i++) {
+    if (countedCat[i].name === countedCat[i + 1].name) {
+      countedCat.splice(i + 1);
+    }
+  }
+   let sorted = countedCat.sort(
+      (firstItem, secondItem) => firstItem.amount - secondItem.amount
+   )
+  let top5 = sorted.slice(Math.max(sorted.length - 5, 0)).reverse();
+  console.log(top5)
+ 
+
+
+  // still need to get the top 6 out of countCategories
+
+  // Popular items to show on the home screen
   let popular = [];
   if (items) {
     for (let i = 0; i < 5; i++) {
       popular.push(items[i]);
     }
   }
+  //
 
   return (
     <div>
-      {/* Body of Page has two sections */}
       <section id="body">
-        {/* Left Section Body has "suggested items"(top)
-            and "most searched" low, and mini links for careers etc.(lowest) */}
         <div className="col-left">
           <div className="body-log-in">
             <p>
@@ -56,7 +84,7 @@ export default function LandingPageBody(props) {
             )}
           </div>
           <div className="body-popular-items">
-            <h3>Popular Items</h3>
+            <h3>Highlighted Items</h3>
             <ul className="popular-items">
               {popular
                 ? popular.map((pop) =>
@@ -65,47 +93,16 @@ export default function LandingPageBody(props) {
                     ) : null
                   )
                 : null}
-              {/* INSERT POPULAR ITEM CARD LIST */}
             </ul>
           </div>
           <div className="extra-information-services">
             <a href="a">Contact</a>
           </div>
         </div>
-        {/* Right Section of Body has a infinite scroll of 
-            random items from the store. Each item with item and how many buys, also with add
-            to cart button */}
-
         <div className="col-right">
           <div className="categories-bar">
             <ul className="categories">
-              {/* {topcategories.forEach((category) => (
-                <li>
-                  <a href="a">Home</a>
-                </li>
-              ))} */}
-
-              <li>
-                <a href="a">Electronics</a>
-              </li>
-              <li>
-                <a href="a">Books</a>
-              </li>
-              <li>
-                <a href="a">Garden</a>
-              </li>
-              <li>
-                <a href="a">Apparel</a>
-              </li>
-              <li>
-                <a href="a">Houseware</a>
-              </li>
-              <li>
-                <a href="a">Furniture</a>
-              </li>
-              <li>
-                <a href="a">Saved</a>
-              </li>
+              {top5 ? top5.map(cate => <li><a href="a">{cate.name}</a></li>) : null}
             </ul>
           </div>
           <div className="items-scroll">

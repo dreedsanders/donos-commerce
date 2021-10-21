@@ -1,5 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import Featured from "../Components/Banners/Featured";
+import ShopNow from "../Components/Banners/ShopNow";
+import YouLove from "../Components/Banners/YouLove";
 import Footer from "../Components/Pages/Footer";
 import LandingPageBody from "../Components/Pages/LandingPageBody";
 import LandingPageHeader from "../Components/Pages/LandingPageHeader";
@@ -34,6 +37,9 @@ export default function LandingPage() {
           handleCloseSignIn={handleCloseSignIn}
           handleLogout={handleLogout}
         />
+        <ShopNow />
+        <YouLove />
+        <Featured />
         <LandingPageBody
           handleShowSignIn={handleShowSignIn}
           handleCloseSignIn={handleCloseSignIn}

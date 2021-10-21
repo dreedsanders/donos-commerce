@@ -4,32 +4,80 @@ import { useHistory } from "react-router";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function LandingPageHeader(props) {
-
   let history = useHistory();
   let dispatch = useDispatch();
 
   let user = useSelector((state) => state.userState.current_user);
   let signin = useSelector((state) => state.userState.signin);
-
+  let items = useSelector((state) => state.itemState.items[0]);
 
   const myStyle = {
     height: "25px",
     fontSize: "20px",
-    fontWeight: "0px"
-  }
+    fontWeight: "0px",
+  };
 
   const goHome = () => {
-    history.push("/")
-  }
+    history.push("/");
+  };
 
   const handleMyPage = () => {
-    dispatch({ type: "MYPAGE", mypage: true})
+    dispatch({ type: "MYPAGE", mypage: true });
+  };
+
+  let categories = [];
+  let counted = {};
+  let countedCat = [];
+
+  items.forEach((item) => categories.push(item.category));
+
+  categories.forEach((cate) => {
+    let count = 0;
+    for (let i = 0; i < categories.length; i++) {
+      if (cate === categories[i]) {
+        count = count + 1;
+      }
+    }
+    countedCat.push({ name: cate, amount: count });
+    if (Object.keys(counted).includes(cate)) {
+    } else {
+      counted[cate] = cate;
+    }
+  });
+  for (let i = 0; i < countedCat.length; i++) {
+    if (countedCat[i].name === countedCat[i + 1].name) {
+      countedCat.splice(i + 1);
+    }
   }
+  let sorted = countedCat.sort(
+    (firstItem, secondItem) => firstItem.amount - secondItem.amount
+  );
+  let top5 = sorted.slice(Math.max(sorted.length - 5, 0)).reverse();
+  console.log(top5);
 
   return (
-    <div>
-      {/* Landing Header with Logo(Left), search bar(middle),
-            and button to login(right) */}
+    <div id="sep">
+      <section id="header-help">
+        <div>
+          <button>Need Help? Contact Info</button>
+        </div>
+        <div>
+          <button className="helpbutton" onClick={() => console.log("click")}>
+            <img
+              src="https://img.icons8.com/external-flatart-icons-flat-flatarticons/64/000000/external-cart-love-flatart-icons-flat-flatarticons.png"
+              alt="cart"
+              height="35px"
+            />
+          </button>
+          <button className="helpbutton">
+            <img
+              src="https://img.icons8.com/external-vitaliy-gorbachev-blue-vitaly-gorbachev/60/000000/external-notification-social-media-vitaliy-gorbachev-blue-vitaly-gorbachev.png"
+              height="35px"
+              alt="notifications"
+            />
+          </button>
+        </div>
+      </section>
       <section id="header">
         <div className="header-icon icon">
           <img
@@ -47,20 +95,14 @@ export default function LandingPageHeader(props) {
               placeholder={"search then press enter"}
               autoComplete="off"
             />
-            {/* <button type="submit">
-              <img
-                src="https://img.icons8.com/external-kiranshastry-lineal-color-kiranshastry/64/000000/external-search-ecommerce-kiranshastry-lineal-color-kiranshastry.png"
-                width="35px"
-                height="40px"
-                alt="yes"
-              />
-            </button> */}
           </form>
         </div>
         <div className="header-login">
-          {user[0]? (
+          {user[0] ? (
             <div className="viewmypage">
-              <button className="mypage-button" onClick={handleMyPage}>My Page</button>
+              <button className="mypage-button" onClick={handleMyPage}>
+                My Page
+              </button>
               <button
                 className="button"
                 style={myStyle}
@@ -86,6 +128,14 @@ export default function LandingPageHeader(props) {
           )}
         </div>
       </section>
+      <div id="filter">
+        <button>Filter</button>
+         <div className="categories-bar">
+            <ul className="categories">
+              {top5 ? top5.map(cate => <li><a href="a">{cate.name}</a></li>) : null}
+          </ul>
+          </div>
+      </div>
     </div>
   );
 }

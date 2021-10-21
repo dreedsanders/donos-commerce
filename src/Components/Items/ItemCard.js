@@ -8,7 +8,6 @@ export default function ItemCard(props) {
   let history = useHistory();
 
   const handleItemClick = (e) => {
-    console.log(props.item)
     dispatch({ type: "CLICK", current_item: props.item })
     history.push("/itempage")
 
@@ -37,7 +36,7 @@ export default function ItemCard(props) {
             src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-cart-black-friday-flatart-icons-outline-flatarticons.png"
             alt="yes"
           />
-          <p>5 people have this in their cart</p>
+          <p>5 people have in cart</p>
         </div>
         <div>
           <img
