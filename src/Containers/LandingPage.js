@@ -1,14 +1,17 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import CompanyFooter from "../Components/Banners/CompanyFooter";
 import Featured from "../Components/Banners/Featured";
 import ShopNow from "../Components/Banners/ShopNow";
+import StartSelling from "../Components/Banners/StartSelling";
 import YouLove from "../Components/Banners/YouLove";
 import Footer from "../Components/Pages/Footer";
-import LandingPageBody from "../Components/Pages/LandingPageBody";
 import LandingPageHeader from "../Components/Pages/LandingPageHeader";
+import MyPage from "../Components/User/MyPage";
 
 export default function LandingPage() {
   let dispatch = useDispatch();
+    let mypage = useSelector((state) => state.userState.mypage);
 
   const handleShowSignIn = () => {
     dispatch({ type: "SHOWSIGNIN", signin: true })
@@ -27,6 +30,9 @@ export default function LandingPage() {
       dispatch({ type: "CLOSEPAGE", mypage: false });
     }
   };
+    let handleMyPage = () => {
+      dispatch({ type: "CLOSEPAGE", mypage: false });
+    };
 
 
   return (
@@ -37,14 +43,12 @@ export default function LandingPage() {
           handleCloseSignIn={handleCloseSignIn}
           handleLogout={handleLogout}
         />
+        {mypage ? <MyPage handleMyPage={handleMyPage} /> : null}
         <ShopNow />
         <YouLove />
         <Featured />
-        <LandingPageBody
-          handleShowSignIn={handleShowSignIn}
-          handleCloseSignIn={handleCloseSignIn}
-          handleLogout={handleLogout}
-        />
+        <StartSelling />
+        <CompanyFooter />
         <Footer />
       </div>
     </div>

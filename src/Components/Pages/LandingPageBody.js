@@ -1,20 +1,13 @@
 import React from "react";
 import SignIn from "./SignIn";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import ItemCard from "../Items/ItemCard";
 import PopularItemCard from "../Items/PopularItemCard";
-import MyPage from "../User/MyPage";
 
 export default function LandingPageBody(props) {
   let user = useSelector((state) => state.userState.current_user);
   let items = useSelector((state) => state.itemState.items[0]);
-  let mypage = useSelector((state) => state.userState.mypage);
-  let dispatch = useDispatch();
   let signin = useSelector((state) => state.userState.signin);
-
-  let handleMyPage = () => {
-    dispatch({ type: "CLOSEPAGE", mypage: false });
-  };
 
   let categories = [];
   let counted = {};
@@ -46,18 +39,13 @@ export default function LandingPageBody(props) {
   let top5 = sorted.slice(Math.max(sorted.length - 5, 0)).reverse();
   console.log(top5)
  
-
-
-  // still need to get the top 6 out of countCategories
-
-  // Popular items to show on the home screen
   let popular = [];
   if (items) {
     for (let i = 0; i < 5; i++) {
       popular.push(items[i]);
     }
   }
-  //
+
 
   return (
     <div>
@@ -106,7 +94,6 @@ export default function LandingPageBody(props) {
             </ul>
           </div>
           <div className="items-scroll">
-            {mypage ? <MyPage handleMyPage={handleMyPage} /> : null}
             {items
               ? items.map((item) => <ItemCard item={item} key={item.id} />)
               : null}

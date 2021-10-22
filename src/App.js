@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux"
 import MyPage from "./Components/User/MyPage"
 import ItemPage from "./Components/Items/ItemPage"
+import LandingPageBody from "./Components/Pages/LandingPageBody";
 function App() {
 
   let dispatch = useDispatch();
@@ -39,21 +40,39 @@ function App() {
       .then((res) => res.json())
       .then((data) => dispatch({ type: "GETITEMS", items: data}));
   };
+    const handleShowSignIn = () => {
+      dispatch({ type: "SHOWSIGNIN", signin: true });
+    };
+
+    const handleCloseSignIn = () => {
+      dispatch({ type: "CLOSESIGNIN", signin: false });
+    };
+
+    const handleLogout = () => {
+      dispatch({ type: "LOGGEDOUT", current_user: null, loggedin: false });
+    };
 
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <Welcome/>
+          <Welcome />
         </Route>
         <Route exact path="/home">
-          <LandingPage  />
+          <LandingPage />
         </Route>
         <Route exact path="/mypage">
           <MyPage />
         </Route>
         <Route exact path="/itempage">
           <ItemPage />
+        </Route>
+        <Route exact path="/market">
+          <LandingPageBody
+            handleShowSignIn={handleShowSignIn}
+            handleCloseSignIn={handleCloseSignIn}
+            handleLogout={handleLogout}
+          />
         </Route>
       </Switch>
     </Router>

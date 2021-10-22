@@ -39,7 +39,7 @@ a {
   display: flex;
   flex-direction: column;
 }
-#landing-page #header .header-icon{
+#landing-page #header .header-icon {
   border-radius: 15px;
 }
 #landing-page #header .header-icon:hover {
@@ -66,7 +66,7 @@ a {
   display: flex;
   flex-direction: column;
 }
-#landing-page #header-help{
+#landing-page #header-help {
   padding: 10px 50px;
   display: flex;
   flex-direction: row;
@@ -74,18 +74,17 @@ a {
   align-items: center;
 }
 
-
-#filter{
+#filter {
   display: flex;
   flex-direction: row;
 }
-#filter button{
+#filter button {
   width: 10%;
   border: transparent;
   background: transparent;
   border-right: 1px solid black;
 }
-#filter .categories-bar{
+#filter .categories-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -94,31 +93,30 @@ a {
   width: 90%;
 }
 #filter .categories-bar .categories {
-    display: flex;
-    width: 100%;
+  display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
- #sep #header-help{
+#sep #header-help {
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.315); */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   border-bottom: 2px solid rgba(0, 0, 0, 0.075);
 }
-#sep #header{
+#sep #header {
   border-bottom: 2px solid rgb(0, 0, 0, 0.075);
 }
-#sep #header-help button{
+#sep #header-help button {
   background: transparent;
   border: none;
   border-radius: 15px;
 }
-#sep #header-help button:hover{
+#sep #header-help button:hover {
   cursor: grabbing;
   box-shadow: 5px 5px 5px rgb(85, 15, 15);
-
 }
 
 #landing-page #header {
@@ -300,6 +298,7 @@ a {
 }
 #landing-page #footer {
   background-color: rgba(169, 169, 169, 0.301);
+  padding: 30px;
 }
 
 #landing-page #footer button:hover {
@@ -392,12 +391,6 @@ a {
   font-size: 1.2rem;
   font-weight: bold;
 }
-
-/* .container .container-background #container-background-span{
-  content: "";
-  height: 100vh;
-  background-color: black;
-} */
 /* End Login */
 
 .mypage {
@@ -409,12 +402,9 @@ a {
   padding: 10px;
   transform: translate(-50%, -50%);
   transition: 200ms ease-in-out;
-  /* border: 1px solid black; */
   border-radius: 15px;
-  
+
   z-index: 10;
-  /* background-color: white; */
-  /* background-image: url("https://image.freepik.com/free-vector/white-abstract-background_23-2148810113.jpg"); */
   width: 90vw;
   background-color: rgba(0, 0, 0, 0.952);
   max-width: 90%;
@@ -423,35 +413,31 @@ a {
 }
 .mypage .mypage-left {
   flex-basis: 15%;
-    color: white;
-  /* border: 1px solid red; */
+  color: white;
   display: flex;
   flex-direction: column;
 }
 .mypage .mypage-left .mypage-dashboard {
-  /* border: 1px solid purple; */
   height: 100%;
 }
-.mypage .mypage-left .mypage-dashboard #categories{
+.mypage .mypage-left .mypage-dashboard #categories {
   height: 50%;
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
-.mypage .mypage-left .mypage-dashboard #categories #single-category{
+.mypage .mypage-left .mypage-dashboard #categories #single-category {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
-.mypage .mypage-left .mypage-dashboard #categories img{
+.mypage .mypage-left .mypage-dashboard #categories img {
   height: 40px;
 }
 
-
 .mypage .mypage-right {
   flex-basis: 80%;
-  /* border: 1px solid blue; */
   padding-left: 15px;
   display: flex;
   flex-direction: column;
@@ -461,7 +447,6 @@ a {
   flex-direction: row;
   justify-content: space-between;
   color: white;
-  /* border: 1px solid pink; */
 }
 .mypage .mypage-info {
   display: flex;
@@ -475,7 +460,7 @@ a {
 .mypage .mypage-info::-webkit-scrollbar {
   display: none;
 }
-.mypage .mypage-info .mypage-bio{
+.mypage .mypage-info .mypage-bio {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -493,7 +478,6 @@ a {
   overflow-y: scroll;
   border-radius: 15px;
   padding: 10px 40px;
-  /* border: 1px solid black; */
 }
 .mypage .mypage-items::-webkit-scrollbar {
   display: none;
@@ -502,29 +486,31 @@ a {
   height: 100px;
   width: 100px;
 }
- 
-#shop-now{
+
+#shop-now {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
-  height: 45vh;
+  height: 40vh;
   color: white;
 }
-#shop-now .shop-now-text{
+#shop-now .shop-now-text {
   flex-basis: 20%;
-  background-color: rgba(131, 0, 0, 0.493);
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  background-color: rgba(0, 9, 131, 0.493);
 }
-#shop-now .shop-now-image{
+#shop-now .shop-now-image {
   width: 80%;
-  /* border: 1px solid blue; */
 }
-#shop-now .shop-now-image img{
+#shop-now .shop-now-image img {
   width: 100%;
-  height: 45vh;
+  height: 40vh;
 }
 
-#you-love{
+#you-love {
   padding: 25px;
   height: 35vh;
   display: flex;
@@ -537,12 +523,12 @@ a {
 #you-love::-webkit-scrollbar {
   display: none;
 }
-#you-love .love-header{
+#you-love .love-header {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-#you-love .love-header button{
+#you-love .love-header button {
   flex-basis: 15%;
   background-color: transparent;
   border: transparent;
@@ -553,20 +539,59 @@ a {
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 10px;
-} 
+}
 #you-love .love-images img {
- background-color: rgba(255, 123, 0, 0.705);
-    display: inline-block;
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    padding: 20px;
+  background-color: rgba(255, 123, 0, 0.705);
+  display: inline-block;
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  padding: 20px;
 }
 
-#featured{
+#featured {
   height: 30vh;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: baseline;
+  padding-left: 60px;
   align-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+#featured .featured-pictures-container .featured-pic {
+  height: 325px;
+  width: 300px;
+}
+#featured .featured-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  padding-right: 80px;
+  padding-left: 40px;
+  border: 1px solid rgba(0, 0, 0, 0.274);
+  height: 100%;
+}
+#selling{
+  padding-bottom: 50px;
+}
+#selling #shop-now .shop-now-text{
+  background-color: blue;
+}
+
+#company-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30vh;
+  padding: 20px;
+}
+#company-footer .footer-links{
+  line-height: 2.5rem;
+}
+#company-footer .footer-links li:hover{
+  text-decoration: underline;
+  cursor: pointer;
 }
