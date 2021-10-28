@@ -59,7 +59,7 @@ export default function LandingPageHeader(props) {
     <div id="sep">
       <section id="header-help">
         <div>
-          <button>Need Help? Contact Info</button>
+          <button>Need Help? Contact</button>
         </div>
         <div>
           <button className="helpbutton" onClick={() => console.log("click")}>

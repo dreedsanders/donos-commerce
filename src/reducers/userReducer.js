@@ -5,7 +5,9 @@ const initialState = {
     users: {},
     errors: "",
     mypage: false,
-    signin: false
+    signin: false,
+    transactions: false,
+    transactionItems: []
 }
 
 const userReducer = (state = initialState, action) => {
@@ -54,6 +56,12 @@ const userReducer = (state = initialState, action) => {
             return {
                 ...state,
                 signin: action.signin
+            }
+        case "TRANSACTIONS":
+            return {
+                ...state,
+                transactions: action.transactions,
+                transactionItems: action.transactionItems
             }
         default:
             return state;

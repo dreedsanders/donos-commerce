@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux"
 import MyPage from "./Components/User/MyPage"
 import ItemPage from "./Components/Items/ItemPage"
 import LandingPageBody from "./Components/Pages/LandingPageBody";
+import Shopping from "./Containers/Shopping";
 function App() {
 
   let dispatch = useDispatch();
@@ -73,6 +74,9 @@ function App() {
             handleCloseSignIn={handleCloseSignIn}
             handleLogout={handleLogout}
           />
+        </Route>
+        <Route exact path="/shopping" >
+          <Shopping />
         </Route>
       </Switch>
     </Router>

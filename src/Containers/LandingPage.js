@@ -6,6 +6,7 @@ import ShopNow from "../Components/Banners/ShopNow";
 import StartSelling from "../Components/Banners/StartSelling";
 import YouLove from "../Components/Banners/YouLove";
 import Footer from "../Components/Pages/Footer";
+import LandingPageBody from "../Components/Pages/LandingPageBody";
 import LandingPageHeader from "../Components/Pages/LandingPageHeader";
 import MyPage from "../Components/User/MyPage";
 
@@ -46,6 +47,7 @@ export default function LandingPage() {
         {mypage ? <MyPage handleMyPage={handleMyPage} /> : null}
         <ShopNow />
         <YouLove />
+        {/* <LandingPageBody /> */}
         <Featured />
         <StartSelling />
         <CompanyFooter />
